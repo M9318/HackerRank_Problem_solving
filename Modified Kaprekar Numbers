@@ -1,0 +1,39 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void kaprekarNumbers(long p, long q) {
+    long i, square,a,d=0,k,b,sum,flag=0;
+    for( i = p; i <= q ; i++){
+        square = i * i ;
+        k =i;
+        while(k>0){
+            k/=10;
+            d++;
+        }
+        b = pow(10,d);
+        sum = square%b +square/b;
+        if(sum ==i){
+            printf("%ld ",i);
+            flag++;
+        }
+        d = 0;
+        
+    }
+    if(flag == 0){
+        printf("INVALID RANGE");
+    }
+}
+
+int main()
+{
+    long p, q;
+    scanf("%ld \n %ld",&p,&q);
+    kaprekarNumbers(p,q);
+    return 0 ;
+}
