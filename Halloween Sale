@@ -1,0 +1,36 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int howManyGames(int p, int d, int m, int s) {
+    int buy = 0, i,result=0;
+while(buy<=s){
+    if (p>=m){
+        buy = buy + p;
+        p   = p - d;
+        result++;
+    }
+    else{
+        p = m;
+        buy = buy + p;
+        result++;
+    }
+}
+return result-1;
+}
+
+int main()
+{
+    int p , d, m , s,result;
+    scanf("%d %d %d %d",&p , &d, &m , &s);
+    result =howManyGames(p,d,m,s);
+    printf("%d",result);
+    
+    return 0;
+}
