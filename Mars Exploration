@@ -1,0 +1,40 @@
+
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char* readline();
+
+// Complete the marsExploration function below.
+int marsExploration(char* s) {
+int i , j, size = strlen(s), changed_letter = 0;
+for( i = 0 ; i < size ; i++){
+
+    if(s[i] != 'S') {
+        changed_letter++;
+    }
+     if(s[i +1] != 'O') {
+        changed_letter++;
+    }
+     if(s[i +2] != 'S') {
+        changed_letter++;
+    }
+    i = i + 2;
+}
+return changed_letter;
+}
+
+int main()
+{
+    char s[100] , result;
+    scanf("%s",s);
+     result = marsExploration(s);
+     printf("%d", result);
+    return 0;
+}
