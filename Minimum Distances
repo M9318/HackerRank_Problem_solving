@@ -1,0 +1,39 @@
+/*The distance between two array values is the number of indices between them. 
+ *Given a, find the minimum distance between any pair of equal elements in the array. If no such value exists, return -1.*/
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+long minimumDistances(long a_count, long* a) {
+    long min = 999, i , j;
+    for( i = 0 ; i < a_count -1 ; i++){
+    for( j = a_count - 1 ; j > i ; j--){
+        if( a[j] == a[i]){
+      if( min > (j-i)){
+          min = j-i;
+          break;
+          }}}}
+          if( min == 999){
+    return -1;
+    }
+    else{
+    return  min;
+}}
+
+int main(){
+    long n , arr_count = 999,i,result;
+    long a[arr_count];
+    scanf("%ld",&n);
+    for( i = 0 ; i < n ; i++){
+        scanf("%ld",&a[i]);
+    }
+    result = minimumDistances(n,a);
+    printf("%ld",result);
+    return 0;
+}
