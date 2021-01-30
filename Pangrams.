@@ -1,0 +1,44 @@
+/*A pangram is a string that contains every letter of the alphabet. 
+*Given a sentence determine whether it is a pangram in the English alphabet. Ignore case. Return either pangram or not pangram as appropriate.
+*Example
+*s = We promptly judged antique ivory buckles for the next prize
+*The string contains all letters in the English alphabet, so return pangram.*/
+
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void pangrams(char* s) {
+    int a,A,p=0,i=0;
+    
+   for( a = 97 , A = 65 ; a <= 122 && A <= 90 ; a++, A++){
+       while(s[i] != '\0'){
+           if(s[i]== a || s[i]==A){
+               p++;
+               break;
+           }
+           i++;
+       }
+       i=0;
+       }
+    if( p == 26 ) {
+        printf("pangram");}
+    else {
+    printf("not pangram");
+    }
+
+}
+
+int main()
+{
+    char s[1000];
+    scanf("%[^\n]s",s);
+    pangrams(s);
+    return 0;
+}
