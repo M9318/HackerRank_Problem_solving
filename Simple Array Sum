@@ -1,0 +1,30 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+long simpleArraySum(long ar_count, long* ar) {
+    long sum =0;
+    long i;
+    for( i = 0 ; i < ar_count ; i++){
+        sum = sum + ar[i];
+    }
+    return sum;
+
+}
+
+int main()
+{
+    long i,result,j;
+    long arr[1000];
+    scanf("%ld",&j);
+    for( i = 0 ; i < j ; i++){
+        scanf("%ld",&arr[i]);
+    }
+    result = simpleArraySum(j,arr);
+    printf("%ld", result);
+    return 0;
+}
