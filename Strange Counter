@@ -1,0 +1,40 @@
+
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char* readline();
+
+// Complete the strangeCounter function below.
+void strangeCounter(long t) {
+    /*long time, i, value = 3, count = 3;
+    for( time = 1; time < t ; time++){
+        if(count == 1){
+          value = value * 2;
+          count = value; 
+        }
+        else{
+        count --;
+        }
+    }
+    printf("%d",count); }*/
+    long count = 4;
+    while( count <= t){
+        count = count * 2 +2;
+    }
+printf("%ld",count-t);
+}
+
+int main()
+{
+    long t;
+    scanf("%ld",&t);
+     strangeCounter(t);
+    return 0;
+}
